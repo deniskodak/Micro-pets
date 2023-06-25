@@ -1,0 +1,13 @@
+.HoverBoardWrapper {
+    & > div {
+        align-items: flex-start;
+        justify-self: start;
+        margin: 0;
+        padding: 0;
+    }
+
+    h2 {
+        margin: 0;
+        color: var(--text-color);
+    }
+}

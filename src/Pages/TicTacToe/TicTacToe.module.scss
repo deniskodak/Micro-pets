@@ -1,0 +1,7 @@
+.TicTacToeWrapper {
+    position: relative;
+    max-width: 1200px;
+    & section {
+        height: 510px;
+    }
+}

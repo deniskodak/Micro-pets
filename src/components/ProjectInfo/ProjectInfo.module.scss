@@ -1,0 +1,21 @@
+.projectInfo {
+    margin-bottom: var(--space-l);
+}
+
+.title {
+    font-size: 48px;
+    line-height: 1.1;
+    color: var(--project-info-title);
+    margin: 0 0 var(--space-xxl);
+}
+
+.titleDecor {
+    color: var(--project-info-title-decor);
+}
+
+.description {
+    font-size: 14px;
+    line-height: 1.4;
+    margin: 0;
+    color: var(--project-info-description);
+}

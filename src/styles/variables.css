@@ -1,0 +1,16 @@
+:root, ::after, ::before {
+    /* fonts */
+    --font-family-sans: 'DM Sans';
+    /* spaces */
+    --space-xxs: 4px;
+    --space-xs: 8px;
+    --space-s: 12px;
+    --space-m: 16px;
+    --space-l: 24px;
+    --space-xl: 32px;
+    --space-xxl: 40px;
+    /* sidebar */
+    --sidebar-width: 200px;
+    --main-black-color: #111;
+    --main-white-color: #fff;
+}
