@@ -5,7 +5,7 @@ import { Item, ItemContext as ItemContextInterface } from 'commonTypes/Item'
 
 import styles from './Sidebar.module.scss'
 import cl from 'classnames'
-
+console.log(pagesConfig, 'pagesConfig')
 const Sidebar = () => {
     const { item: activeItem, setItem } = useContext(ItemContext) as ItemContextInterface
 

@@ -12,10 +12,6 @@ const themesMap = {
 type Theme = keyof typeof themesMap
 
 const Header = () => {
-    useEffect(() => {
-        handleChangeTheme()
-    }, [])
-
     const handleChangeTheme = () => {
         const themeLink = document.querySelector('link[href*="-theme.css"]');
         if (!themeLink) return
