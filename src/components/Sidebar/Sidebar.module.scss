@@ -1,0 +1,24 @@
+.list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: var(--sidebar-width);
+}
+
+.item {
+    font-size: 18px;
+    font-family: var(--font-family-sans);
+    line-height: 1.3;
+    color: var(--sidebar-text-color);
+    margin-bottom: var(--space-xl);
+    cursor: pointer;
+
+    &:hover {
+        color: var(--sidebar-text-hover-color);
+    }
+
+    &:active,
+    &.active {
+        color: var(--sidebar-text-active-color);
+    }
+}

@@ -1,0 +1,25 @@
+*, html {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--body-background);
+}
+
+.main-section {
+    display: flex;
+    padding: var(--space-xxl) var(--space-l);
+}
+
+.project-section {
+    flex: 1;
+    margin-left: var(--space-xxl);
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
