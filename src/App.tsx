@@ -13,7 +13,7 @@ import * as pages from '@pages/index'
 const [defaultItem] = pagesConfig
 
 import './App.scss'
-console.log(pages, 'pages')
+
 const App = () => {
     const [activeItem, setActiveItem] = useState<Item>(defaultItem)
 
