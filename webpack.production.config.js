@@ -10,7 +10,7 @@ module.exports = {
     output: {
         path: path.join(__dirname, '/dist'),
         filename: 'micro-pets.js',
-        publicPath: 'http://localhost:9001/',
+        publicPath: 'https://deniskodak.github.io/Micro-pets/',
     },
     mode: 'production',
     module: {
