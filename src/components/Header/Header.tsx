@@ -13,6 +13,7 @@ type Theme = keyof typeof themesMap
 
 const Header = () => {
     const handleChangeTheme = () => {
+        console.log('theme is changing')
         const themeLink = document.querySelector('link[href*="-theme.css"]');
         if (!themeLink) return
         const href = themeLink.getAttribute('href')
