@@ -83,7 +83,7 @@ module.exports = {
             cleanOnceBeforeBuildPatterns: ['**/*'],
         }),
         new MiniCssExtractPlugin({
-            filename: '[name].[contenthash].css',
+            filename: '[name].css',
         }),
         new HtmlWebpackPlugin({
             template: './src/template.hbs',
