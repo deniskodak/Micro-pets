@@ -6,10 +6,14 @@ const { ModuleFederationPlugin } = require('webpack').container
 const { dependencies } = require('./package.json')
 
 module.exports = {
-    entry: './src/index.js',
+    entry: {
+        'micro-pets': './src/index.js',
+        'light-theme': './src/styles/light-theme.css',
+        'dark-theme': './src/styles/dark-theme.css',
+    },
     output: {
         path: path.join(__dirname, '/dist'),
-        filename: 'micro-pets.js',
+        filename: '[name].js',
         publicPath: 'https://deniskodak.github.io/Micro-pets/',
     },
     mode: 'production',
@@ -79,7 +83,7 @@ module.exports = {
             cleanOnceBeforeBuildPatterns: ['**/*'],
         }),
         new MiniCssExtractPlugin({
-            filename: 'style.[contenthash].css',
+            filename: '[name].[contenthash].css',
         }),
         new HtmlWebpackPlugin({
             template: './src/template.hbs',
