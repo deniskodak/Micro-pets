@@ -83,7 +83,6 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             template: './src/template.hbs',
-            filename: 'micro-pets.html',
         }),
         new ModuleFederationPlugin({
             name: 'MicroPetsApp',
