@@ -7,7 +7,7 @@ const { dependencies } = require('./package.json')
 
 module.exports = {
     entry: {
-        'micro-pets': './src/index.js',
+        'micro-pets': './src/bootstrap.js',
         'light-theme': './src/styles/light-theme.css',
         'dark-theme': './src/styles/dark-theme.css',
     },

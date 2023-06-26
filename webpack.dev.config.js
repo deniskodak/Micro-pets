@@ -119,6 +119,7 @@ module.exports = {
                     'HoverBoardApp@https://deniskodak.github.io/hover-board/remoteEntry.js',
             },
             shared: {
+                ...dependencies,
                 react: {
                     requiredVersion: dependencies.react,
                     singleton: true,
