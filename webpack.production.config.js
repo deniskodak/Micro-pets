@@ -14,7 +14,7 @@ module.exports = {
     output: {
         path: path.join(__dirname, '/dist'),
         filename: '[name].[contenthash].js',
-        publicPath: 'https://deniskodak.github.io/Micro-pets/',
+        publicPath: 'https://micro-pets.vercel.app/',
     },
     mode: 'production',
     module: {
