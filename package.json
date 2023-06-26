@@ -8,7 +8,7 @@
     "start": "webpack serve --config webpack.dev.config.js",
     "build": "webpack --config webpack.production.config.js",
     "deploy": "npm run build && gh-pages -d dist",
-    "server": "node src/server.js"
+    "server": "node index.js"
   },
   "keywords": [],
   "author": "denis.kodak",
