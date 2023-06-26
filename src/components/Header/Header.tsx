@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Switch from '@mui/material/Switch'
 import Logo from '@components/Logo'
 
@@ -12,13 +12,13 @@ const themesMap = {
 type Theme = keyof typeof themesMap
 
 const Header = () => {
+    const themeLink = document.querySelector('link[href*="-theme.css"]')
+
     const handleChangeTheme = () => {
-        console.log('theme is changing')
-        const themeLink = document.querySelector('link[href*="-theme.css"]');
         if (!themeLink) return
         const href = themeLink.getAttribute('href')
-        if(!href) return
-        const themeName = href.match(/\/([^/]+)\.css$/)?.[1] || 'light-theme';
+        if (!href) return
+        const themeName = href.match(/\/([^/]+)\.css$/)?.[1] || 'light-theme'
         const newHref = href.replace(themeName, themesMap[themeName as Theme])
         themeLink.setAttribute('href', newHref)
     }
@@ -26,7 +26,7 @@ const Header = () => {
     return (
         <header className={styles.header}>
             <Logo />
-            <Switch onChange={handleChangeTheme}/>
+            <Switch onChange={handleChangeTheme} />
         </header>
     )
 }

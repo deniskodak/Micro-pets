@@ -14,6 +14,11 @@ const [defaultItem] = pagesConfig
 
 import './App.scss'
 
+const removeLoader = () => {
+    const loader = document.querySelector('#loader')
+    window.onload = () => loader?.remove()
+}
+
 const App = () => {
     const [activeItem, setActiveItem] = useState<Item>(defaultItem)
 
@@ -28,6 +33,7 @@ const App = () => {
 
     useLayoutEffect(() => {
         setInitialItem()
+        removeLoader()
     }, [])
 
     return (
