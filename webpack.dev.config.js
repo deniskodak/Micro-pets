@@ -110,13 +110,17 @@ module.exports = {
             filename: 'remoteEntry.js',
             remotes: {
                 TicTacToeApp:
-                    // start up TicTacToe locally to use this url
+                    // start up Tic Tac Toe locally to use this url
                     // 'TicTacToeApp@http://localhost:9000/remoteEntry.js',
                     'TicTacToeApp@https://deniskodak.github.io/tictaktoe/remoteEntry.js',
                 HoverBoardApp:
-                    // start up HoverBoard locally to use this url
+                    // start up Hover Board locally to use this url
                     // 'HoverBoardApp@http://localhost:9003/remoteEntry.js',
                     'HoverBoardApp@https://deniskodak.github.io/hover-board/remoteEntry.js',
+                ImageFinderApp:
+                    // start up Image Finder locally to use this url
+                    'ImageFinderApp@http://localhost:8002/remoteEntry.js',
+                    // 'ImageFinderApp@https://deniskodak.github.io/js-image-finder/remoteEntry.js',
             },
             shared: {
                 ...dependencies,

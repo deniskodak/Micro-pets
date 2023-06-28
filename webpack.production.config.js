@@ -97,6 +97,8 @@ module.exports = {
                     'TicTacToeApp@https://deniskodak.github.io/tictaktoe/remoteEntry.js',
                 HoverBoardApp:
                     'HoverBoardApp@https://deniskodak.github.io/hover-board/remoteEntry.js',
+                ImageFinderApp:
+                    'ImageFinderApp@https://deniskodak.github.io/js-image-finder/remoteEntry.js',
             },
             shared: {
                 ...dependencies,

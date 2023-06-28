@@ -1,0 +1,13 @@
+.wrapper {
+    max-height: 500px;
+    overflow: auto;
+    padding-bottom: var(--space-l);
+}
+
+.imageWrapper {
+    width: 100%;
+    overflow: auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: var(--space-m);
+}

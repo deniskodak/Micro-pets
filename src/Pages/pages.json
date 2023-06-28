@@ -16,5 +16,11 @@
         "url": "/Micro-pets/Hover-board",
         "title": "Hover Board",
         "description": "The game is a time-killer. Intuitive, you need to select the difficulty of the board and press the 'Start' button. Then just move your mouse across the board."
+    },
+    {
+        "key": "ImageFinder",
+        "url": "/Micro-pets/Image-finder",
+        "title": "Image Finder",
+        "description": "The game is a time-killer. Intuitive, you need to select the difficulty of the board and press the 'Start' button. Then just move your mouse across the board."
     }
 ]
