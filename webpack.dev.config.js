@@ -119,8 +119,8 @@ module.exports = {
                     'HoverBoardApp@https://deniskodak.github.io/hover-board/remoteEntry.js',
                 ImageFinderApp:
                     // start up Image Finder locally to use this url
-                    'ImageFinderApp@http://localhost:8002/remoteEntry.js',
-                    // 'ImageFinderApp@https://deniskodak.github.io/js-image-finder/remoteEntry.js',
+                    // 'ImageFinderApp@http://localhost:8002/remoteEntry.js',
+                    'ImageFinderApp@https://deniskodak.github.io/js-image-finder/remoteEntry.js',
             },
             shared: {
                 ...dependencies,

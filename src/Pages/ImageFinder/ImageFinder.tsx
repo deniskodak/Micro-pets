@@ -7,7 +7,7 @@ const ImageFinder = () => {
     const imageRef = useRef(null)
 
     const setImageFinder = async () => {
-        const {default: Render} = await import('ImageFinderApp/ImageFinder')
+        const { default: Render } = await import('ImageFinderApp/ImageFinder')
         const render = new Render(imageRef.current, formRef.current)
         render.init()
     }
