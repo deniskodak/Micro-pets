@@ -1,0 +1,50 @@
+@import "../../styles/mixin.scss";
+
+.banner {
+    background: var(--banner-background);
+    padding: var(--space-l) var(--space-xxl);
+    border-radius: 1rem;
+    max-width: var(--sidebar-width);
+
+    @include media($until: 'md') {
+        margin: var(--space-xxl) auto 0; 
+    }
+
+    @include media($from: 'md', $until: "xl") {
+        margin-left: auto;
+    }
+
+    @include media($from: 'xl') {
+        margin-top: 5.5rem;
+    }
+}
+
+.bannerTitle {
+    font-size: var(--banner-title-size);
+    line-height: 1.1;
+    color: var(--banner-title);
+    margin: 0 0 var(--space-xxl);
+
+    svg {
+        margin-left: var(--space-xs);
+        vertical-align: bottom;
+    }
+}
+
+.bannerLink {
+    svg {
+        fill: var(--banner-svg);
+    }
+
+    &:hover,
+    &:focus {
+        svg {
+            fill: var(--banner-svg-hover);
+            transform: scale(1.05);
+        }
+    }
+}
+
+.bannerItem {
+    margin-bottom: var(--space-m);
+}

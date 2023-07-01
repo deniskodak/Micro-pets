@@ -1,0 +1,39 @@
+@import '../../styles/mixin.scss';
+
+.section {
+    @include media($from: 'xl') {
+        flex: 1;
+    }
+}
+
+.title {
+    color: var(--projectList-title);
+    margin: 0 0 var(--space-xxl);
+
+    @include media($until: 'md') {
+        font-size: 2rem;
+        line-height: 1.18;
+        text-align: center;
+    }
+
+    @include media($from: 'md') {
+        font-size: 3rem;
+        line-height: 1.05;
+    }
+}
+
+.titleDecor {
+    color: var(--projectList-title-decor);
+}
+
+.list {
+    @include media($until: 'md') {
+        max-width: 335px;
+        margin: 0 auto;
+    }
+
+    @include media($from: 'md') {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}

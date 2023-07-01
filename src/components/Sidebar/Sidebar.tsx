@@ -1,35 +1,74 @@
 import React, { useCallback, useContext } from 'react'
 import pagesConfig from '@pages/pages.json'
-import { ItemContext } from '@context/itemContext'
-import { Item, ItemContext as ItemContextInterface } from 'commonTypes/Item'
+import { TabContextInterface } from 'commonTypes/Tab'
+import { TabContext } from '@context/tabContext'
+import Tabs from '@mui/material/Tabs'
+import Tab from '@mui/material/Tab'
 
 import styles from './Sidebar.module.scss'
-import cl from 'classnames'
+
+const tags = pagesConfig.reduce((acc: string[], pageConfig) => {
+    const pageTags = pageConfig.tags
+    pageTags.forEach((tag) => {
+        if (!acc.includes(tag)) acc.push(tag)
+    })
+    return acc
+}, [])
 
 const Sidebar = () => {
-    const { item: activeItem, setItem } = useContext(ItemContext) as ItemContextInterface
+    const { activeTab, setActiveTab } = useContext(
+        TabContext
+    ) as TabContextInterface
 
-    const handleUpdateUrl = useCallback(
-        (item: Item) => () => {
-            history.replaceState({}, '', item.url)
-            setItem(item)
+    // const handleUpdateUrl = useCallback(
+    //     (item: Item) => () => {
+    //         history.replaceState({}, '', item.url)
+    //         setItem(item)
+    //     },
+    //     []
+    // )
+
+    const handleChangeTap = useCallback(
+        (e: React.SyntheticEvent<Element, Event>, value: string) => {
+            setActiveTab(value)
         },
         []
     )
 
-    const items = pagesConfig.map((item) => (
-        <li
-            key={item.url}
-            className={cl(styles.item, {
-                [styles.active]: activeItem.url === item.url,
-            })}
-            onClick={handleUpdateUrl(item)}
-        >
-            {item.title}
-        </li>
-    ))
+    // const items = pagesConfig.map((item) => (
+    //     <li
+    //         key={item.url}
+    //         className={cl(styles.item, {
+    //             [styles.active]: activeItem.url === item.url,
+    //         })}
+    //         onClick={handleUpdateUrl(item)}
+    //     >
+    //         {item.title}
+    //     </li>
+    // ))
 
-    return <ul className={styles.list}>{items}</ul>
+    return (
+        <div>
+            <Tabs
+                orientation="vertical"
+                value={activeTab}
+                onChange={handleChangeTap}
+                variant="scrollable"
+                className={styles.tabs}
+                scrollButtons="auto"
+                aria-label="sidebar tabs"
+            >
+                {tags.map((tag) => (
+                    <Tab
+                        key={tag}
+                        label={tag}
+                        value={tag}
+                        className={styles.tab}
+                    />
+                ))}
+            </Tabs>
+        </div>
+    )
 }
 
 export default Sidebar

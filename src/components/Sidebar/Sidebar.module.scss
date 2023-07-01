@@ -1,24 +1,37 @@
-.list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    width: var(--sidebar-width);
-}
+@import "../../styles/mixin.scss";
 
-.item {
-    font-size: 18px;
-    font-family: var(--font-family-sans);
-    line-height: 1.3;
-    color: var(--sidebar-text-color);
-    margin-bottom: var(--space-xl);
-    cursor: pointer;
+.tabs {
+    width: 100%;
 
-    &:hover {
-        color: var(--sidebar-text-hover-color);
+    .tab {
+        font-size: var(--sidebar-text-size);
+        font-family: var(--font-family-sans);
+        line-height: 1.3;
+        align-items: flex-start;
+        color: var(--sidebar-text-color);
+
+        @include media($until: 'md') {
+            width: 100%;
+            max-width: 100%;
+            align-items: center;
+        }
+
+        @include media($from: 'md', $until: "xl") {
+            width: var(--sidebar-width);
+        }
+
+        &:hover,
+        &:focus {
+            color: var(--sidebar-text-hover-color);
+        }
+
+        &:active,
+        &[aria-selected='true'] {
+            color: var(--sidebar-text-active-color);
+        }
     }
 
-    &:active,
-    &.active {
-        color: var(--sidebar-text-active-color);
+    & [class~="MuiTabs-indicator"] {
+        background-color: var(--sidebar-text-active-color);
     }
 }

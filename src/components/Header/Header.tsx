@@ -1,6 +1,7 @@
 import React from 'react'
 import Switch from '@mui/material/Switch'
 import Logo from '@components/Logo'
+import { styled } from '@mui/material/styles'
 
 import styles from './Header.module.scss'
 
@@ -8,6 +9,17 @@ const themesMap = {
     'light-theme': 'dark-theme',
     'dark-theme': 'light-theme',
 }
+
+const MaterialUISwitch = styled(Switch)(() => ({
+    '& .MuiSwitch-switchBase': {
+        '&.Mui-checked': {
+            color: '#eac645',
+            '& + .MuiSwitch-track': {
+                backgroundColor: '#eac645',
+            },
+        },
+    },
+}))
 
 type Theme = keyof typeof themesMap
 
@@ -26,7 +38,7 @@ const Header = () => {
     return (
         <header className={styles.header}>
             <Logo />
-            <Switch onChange={handleChangeTheme} />
+            <MaterialUISwitch onChange={handleChangeTheme} />
         </header>
     )
 }

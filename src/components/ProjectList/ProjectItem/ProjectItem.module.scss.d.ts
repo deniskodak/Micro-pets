@@ -2,9 +2,8 @@
 // Please do not change this file!
 interface CssExports {
   'description': string;
-  'projectInfo': string;
-  'title': string;
-  'titleDecor': string;
+  'figure': string;
+  'item': string;
 }
 export const cssExports: CssExports;
 export default cssExports;
