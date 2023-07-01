@@ -4,6 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const { ModuleFederationPlugin } = require('webpack').container
 const { dependencies } = require('./package.json')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const { create } = require('sass-alias')
 
 module.exports = {
     entry: {
@@ -48,6 +49,11 @@ module.exports = {
                 },
             },
             {
+                test: /\.(jpg|png)?$/,
+                exclude: /node_modules/,
+                type: 'asset/resource',
+            },
+            {
                 test: /\.(sa|sc|c)ss$/,
                 exclude: /\.module.(s(a|c)ss)$/,
                 use: [
@@ -73,6 +79,14 @@ module.exports = {
                         loader: 'sass-loader',
                         options: {
                             sourceMap: true,
+                            sassOptions: {
+                                importer: create({
+                                    '@styles': path.join(
+                                        __dirname,
+                                        'src/styles'
+                                    ),
+                                }),
+                            },
                         },
                     },
                 ],
@@ -80,6 +94,10 @@ module.exports = {
             {
                 test: /\.hbs$/,
                 use: ['handlebars-loader'],
+            },
+            {
+                test: /\.svg$/,
+                use: ['@svgr/webpack'],
             },
         ],
     },
@@ -89,8 +107,20 @@ module.exports = {
             '@pages': path.resolve(__dirname, 'src/Pages'),
             commonTypes: path.resolve(__dirname, 'src/commonTypes'),
             '@context': path.resolve(__dirname, 'src/Context'),
+            images: path.resolve(__dirname, 'src/images'),
         },
-        extensions: ['', '.ts', '.tsx', '.js', '.css', 'module.scss', '.json'],
+        extensions: [
+            '',
+            '.ts',
+            '.tsx',
+            '.js',
+            '.css',
+            '.module.scss',
+            '.json',
+            '.svg',
+            '.png',
+            '.jpg',
+        ],
     },
     plugins: [
         new CleanWebpackPlugin({
@@ -109,10 +139,10 @@ module.exports = {
             name: 'MicroPetsApp',
             filename: 'remoteEntry.js',
             remotes: {
-                TicTacToeApp:
-                    // start up Tic Tac Toe locally to use this url
-                    // 'TicTacToeApp@http://localhost:9000/remoteEntry.js',
-                    'TicTacToeApp@https://deniskodak.github.io/tictaktoe/remoteEntry.js',
+                // TicTacToeApp:
+                // start up Tic Tac Toe locally to use this url
+                // 'TicTacToeApp@http://localhost:9000/remoteEntry.js',
+                // 'TicTacToeApp@https://deniskodak.github.io/tictaktoe/remoteEntry.js',
                 HoverBoardApp:
                     // start up Hover Board locally to use this url
                     // 'HoverBoardApp@http://localhost:9003/remoteEntry.js',

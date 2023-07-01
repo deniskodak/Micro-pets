@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const { ModuleFederationPlugin } = require('webpack').container
 const { dependencies } = require('./package.json')
+const { create } = require('sass-alias')
 
 module.exports = {
     entry: {
@@ -19,6 +20,11 @@ module.exports = {
     mode: 'production',
     module: {
         rules: [
+            {
+                test: /\.(jpg|png)?$/,
+                exclude: /node_modules/,
+                type: 'asset/resource',
+            },
             {
                 test: /\.(ts|js)x?$/,
                 exclude: /node_modules/,
@@ -59,6 +65,14 @@ module.exports = {
                         loader: 'sass-loader',
                         options: {
                             sourceMap: true,
+                            sassOptions: {
+                                importer: create({
+                                    '@styles': path.join(
+                                        __dirname,
+                                        'src/styles'
+                                    ),
+                                }),
+                            },
                         },
                     },
                 ],
@@ -66,6 +80,10 @@ module.exports = {
             {
                 test: /\.hbs$/,
                 use: ['handlebars-loader'],
+            },
+            {
+                test: /\.svg$/,
+                use: ['@svgr/webpack'],
             },
         ],
     },
@@ -75,8 +93,20 @@ module.exports = {
             '@pages': path.resolve(__dirname, 'src/Pages'),
             commonTypes: path.resolve(__dirname, 'src/commonTypes'),
             '@context': path.resolve(__dirname, 'src/Context'),
+            images: path.resolve(__dirname, 'src/images'),
         },
-        extensions: ['', '.ts', '.tsx', '.js', '.css', 'module.scss', '.json'],
+        extensions: [
+            '',
+            '.ts',
+            '.tsx',
+            '.js',
+            '.css',
+            '.module.scss',
+            '.json',
+            '.svg',
+            '.png',
+            '.jpg',
+        ],
     },
     plugins: [
         new CleanWebpackPlugin({
