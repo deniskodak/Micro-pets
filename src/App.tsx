@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '@components/Header'
 import Sidebar from '@components/Sidebar'
 import Banner from '@components/Banner'
@@ -20,24 +20,14 @@ import './App.scss'
 
 const removeLoader = () => {
     const loader = document.querySelector('#loader')
-    window.onload = () => loader?.remove()
+    loader?.remove()
 }
 
 const App = () => {
     const [activeItem, setActiveItem] = useState<Item>(defaultItem)
     const [activeTab, setActiveTab] = useState(DEFAULT_TAB)
 
-    const setInitialItem = () => {
-        const item =
-            pagesConfig.find(({ url }) => url === window.location.pathname) ||
-            defaultItem
-        setActiveItem(item)
-    }
-
-    // const PageComponent = pages[activeItem.key as keyof typeof pages]
-
-    useLayoutEffect(() => {
-        setInitialItem()
+    useEffect(() => {
         removeLoader()
     }, [])
 
