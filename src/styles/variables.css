@@ -1,4 +1,6 @@
-:root, ::after, ::before {
+:root,
+::after,
+::before {
     /* fonts */
     --font-family-sans: 'DM Sans';
     /* spaces */
@@ -16,7 +18,11 @@
     --sidebar-text-size: 18px;
     /* banner */
     --banner-title: #fff;
-    --banner-background: linear-gradient(0deg, rgba(255,255,255,1) -100%, rgba(79,46,232,1) 100%);
+    --banner-background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 1) -100%,
+        rgba(79, 46, 232, 1) 100%
+    );
     --banner-title-size: 28px;
     --banner-svg: rgba(255, 255, 255, 0.796);
     --banner-svg-hover: #fff;
@@ -24,10 +30,18 @@
     --button-bg: transparent;
     --button-padding: 14px 28px;
     --button-font-size: 14px;
-    --button-text: #111;
-    --button-border: #4F2EE8;
+    --button-border: #4f2ee8;
     /* projectList */
     --projectList-description-font-size: 12px;
-    --projectList-description-text: #B4AFAF;
-    --projectList-title-decor: #4F2EE8;
+    --projectList-description-text: #b4afaf;
+    --projectList-title-decor: #4f2ee8;
+    /* projectModal */
+    --projectModal-border-radius: 18px;
+    --projectModal-subTitle: #b4afaf;
+    --projectModal-subTitle-mb: 20px;
+    --projectModal-width: 580px;
+    --projectModal-width-small: 335px;
+    --projectModal-subTitle-font-size: 14px;
+    --projectModal-subTitle-font-size-small: 12px;
+    --projectModal-close-icon-small-position: 12px;
 }

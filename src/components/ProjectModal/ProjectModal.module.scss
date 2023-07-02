@@ -1,0 +1,106 @@
+@import '../../styles/mixin.scss';
+
+.wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--projectModal-bg);
+    color: var(--projectModal-text);
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid var(--projectModal-border);
+    border-radius: var(--projectModal-border-radius);
+    outline: none;
+
+    button {
+        margin-top: var(--space-xl);
+
+        @include media($from: 'md') {
+            flex-basis: 100%;
+        }
+    }
+
+    img {
+        border-radius: 0.5rem;
+
+        @include media($until: 'md') {
+            width: 100%;
+        }
+    }
+
+    @include media($until: 'md') {
+        width: calc(100% - var(--space-xxl));
+        padding: var(--space-xxl) 1.5rem;
+        max-width: var(--projectModal-width-small);
+        justify-content: center;
+    }
+
+    @include media($from: 'md') {
+        width: var(--projectModal-width);
+        padding: var(--space-xxl);
+    }
+}
+
+.closeIcon {
+    position: absolute;
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    color: inherit;
+    top: var(--projectModal-close-icon-small-position);
+    right: var(--projectModal-close-icon-small-position);
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        color: var(--projectModal-closeIcon-hover);
+        transform: scale(1.05);
+    }
+
+    @include media($from: 'md') {
+        top: 1.5rem;
+        right: 1.5rem;
+    }
+}
+
+.modalInfo {
+    margin-top: 1rem;
+    flex-basis: 100%;
+
+    @include media($from: 'md') {
+        margin-top: 0;
+        margin-left: 1.5rem;
+        flex-basis: 58%;
+    }
+}
+
+.title {
+    line-height: 1.05;
+
+    @include media($until: 'md') {
+        margin: 0 0 var(--space-xxs);
+        font-size: 1rem;
+    }
+
+    @include media($from: 'md') {
+        margin: 0 0 0.5rem;
+        font-size: 1.5rem;
+    }
+}
+
+.subTitle,
+.description {
+    font-size: var(--projectModal-subTitle-font-size);
+    line-height: 1.2;
+}
+
+.subTitle {
+    display: block;
+    color: var(--projectModal-subTitle);
+    margin: 0 0 var(--projectModal-subTitle-mb);
+
+    @include media($until: 'md') {
+        font-size: var(--projectModal-subTitle-font-size-small);
+    }
+}

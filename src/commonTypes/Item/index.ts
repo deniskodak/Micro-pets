@@ -3,9 +3,10 @@ export interface Item {
     key: string
     title: string
     description: string
+    tags: string[]
 }
 
 export interface ItemContext {
-    item: Item
-    setItem: React.Dispatch<React.SetStateAction<Item>>
+    item: Item | null
+    setItem: React.Dispatch<React.SetStateAction<Item | null>>
 }

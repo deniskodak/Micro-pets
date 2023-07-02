@@ -27,7 +27,7 @@ $breakpoints: (
     //UNTIL: this breakpoint (exclusive)
     @if $until {
         @if type-of($until) == number {
-            $max-width: $until - 1px;
+            $max-width: $until - 0px;
         } @else {
             $max-width: map-get($breakpoints, $until) - 1px;
         }

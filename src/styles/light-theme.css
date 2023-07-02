@@ -8,10 +8,18 @@
     --header-border-color: #111;
     /* logo */
     --logo-color: #111;
+    /* button */
+    --button-text: #111;
+    --button-text-hover: #fff;
     /* sidebar */
     --sidebar-text-color: rgba(17, 17, 17, 0.6);
     --sidebar-text-hover-color: #502ee8e8;
     --sidebar-text-active-color: #4F2EE8;
     /* projectList */
     --projectList-title: #111;
+    /* projectModal */
+    --projectModal-bg: #fff;
+    --projectModal-border: #111;
+    --projectModal-text: #111;
+    --projectModal-closeIcon-hover: #000;
 }

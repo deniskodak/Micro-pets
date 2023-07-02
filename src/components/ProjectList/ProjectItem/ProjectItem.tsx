@@ -1,4 +1,6 @@
-import React, { FC } from 'react'
+import React, { FC, useContext } from 'react'
+import { ItemContext } from '@context/itemContext'
+import { ItemContext as ItemContextInterface } from 'commonTypes/Item'
 
 import * as imagesUrls from 'images/projectList'
 import { PageConfig } from '../ProjectList'
@@ -13,9 +15,12 @@ import styles from './ProjectItem.module.scss'
 
 const ProjectItem: FC<ProjectItem> = ({ pageConfig, defaultTab }) => {
     const { key, title, tags } = pageConfig
+    const { setItem } = useContext(ItemContext) as ItemContextInterface
+
+    const handleItemClick = () => setItem(pageConfig)
 
     return (
-        <li className={styles.item}>
+        <li className={styles.item} onClick={handleItemClick}>
             <figure className={styles.figure}>
                 <picture>
                     <source
