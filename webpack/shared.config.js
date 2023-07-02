@@ -103,10 +103,5 @@ module.exports = (mode) => ({
             '.jpg',
         ],
     },
-    plugins: [
-        new CleanWebpackPlugin(),
-        new MiniCssExtractPlugin({
-            chunkFilename: 'style.[name].css',
-        }),
-    ],
+    plugins: [new CleanWebpackPlugin()],
 })
