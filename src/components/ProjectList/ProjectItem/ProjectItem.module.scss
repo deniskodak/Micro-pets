@@ -48,7 +48,7 @@
     }
 
     h3 {
-        color: var(--projectList-title);
+        color: var(--section-title);
     }
 
     figcaption h3,
@@ -66,6 +66,6 @@
 
 .description {
     display: block;
-    font-size: var(--projectList-description-font-size);
-    color: var(--projectList-description-text);
+    font-size: var(--section-description-font-size);
+    color: var(--section-description-text);
 }

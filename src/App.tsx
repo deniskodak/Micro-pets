@@ -45,7 +45,14 @@ const App = () => {
                         isHomePage={isHomePage}
                         updateLocation={updateLocation}
                     />
-                    {isHomePage ? <Home /> : <Project />}
+                    {isHomePage ? (
+                        <Home />
+                    ) : (
+                        <Project
+                            location={location}
+                            updateLocation={updateLocation}
+                        />
+                    )}
                     {activeItem && (
                         <ProjectModal
                             item={activeItem}

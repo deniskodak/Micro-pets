@@ -37,10 +37,10 @@ module.exports = {
             name: 'MicroPetsApp',
             filename: 'remoteEntry.js',
             remotes: {
-                // TicTacToeApp:
+                TicTacToeApp:
                 // start up Tic Tac Toe locally to use this url
                 // 'TicTacToeApp@http://localhost:9000/remoteEntry.js',
-                // 'TicTacToeApp@https://deniskodak.github.io/tictaktoe/remoteEntry.js',
+                'TicTacToeApp@https://deniskodak.github.io/tictaktoe/remoteEntry.js',
                 HoverBoardApp:
                     // start up Hover Board locally to use this url
                     // 'HoverBoardApp@http://localhost:9003/remoteEntry.js',

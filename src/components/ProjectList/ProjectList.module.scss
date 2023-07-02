@@ -7,7 +7,7 @@
 }
 
 .title {
-    color: var(--projectList-title);
+    color: var(--section-title);
     margin: 0 0 var(--space-xxl);
 
     @include media($until: 'md') {
@@ -23,7 +23,7 @@
 }
 
 .titleDecor {
-    color: var(--projectList-title-decor);
+    color: var(--section-title-decor);
 }
 
 .list {

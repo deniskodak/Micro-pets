@@ -1,21 +1,21 @@
 [
     {
         "key": "TicTacToe",
-        "url": "/Micro-pets/Tic-tac-toe",
+        "url": "/Micro-pets/TicTacToe",
         "title": "Tic Tac Toe",
         "description": "A well-known logical game between two opponents on a square field 3 by 3 cells. One of the players plays with 'crosses', the second - with 'tac-toes'",
         "tags": ["All", "Entertaining", "React"]
     },
     {
         "key": "HoverBoard",
-        "url": "/Micro-pets/Hover-board",
+        "url": "/Micro-pets/HoverBoard",
         "title": "Hover Board",
         "description": "The game is a time-killer. Intuitive, you need to select the difficulty of the board and press the 'Start' button. Then just move your mouse across the board.",
         "tags": ["All", "Entertaining", "React"]
     },
     {
         "key": "ImageFinder",
-        "url": "/Micro-pets/Image-finder",
+        "url": "/Micro-pets/ImageFinder",
         "title": "Image Finder",
         "description": "The game is a time-killer. Intuitive, you need to select the difficulty of the board and press the 'Start' button. Then just move your mouse across the board.",
         "tags": ["All", "Javascript", "Mixed"]

@@ -37,9 +37,7 @@
     --button-font-size: 14px;
     --button-border: #4f2ee8;
     /* projectList */
-    --projectList-description-font-size: 12px;
-    --projectList-description-text: #b4afaf;
-    --projectList-title-decor: #4f2ee8;
+    --section-description-font-size: 12px;
     /* projectModal */
     --projectModal-border-radius: 18px;
     --projectModal-subTitle: #b4afaf;
@@ -49,4 +47,7 @@
     --projectModal-subTitle-font-size: 14px;
     --projectModal-subTitle-font-size-small: 12px;
     --projectModal-close-icon-small-position: 12px;
+    /* common */
+    --section-description-text: #b4afaf;
+    --section-title-decor: #4f2ee8;
 }
