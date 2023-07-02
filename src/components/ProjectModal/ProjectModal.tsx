@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, useCallback } from 'react'
 import { Item } from 'commonTypes/Item'
 import Button from '@components/Button'
 import Modal from '@mui/material/Modal'
@@ -9,6 +9,7 @@ import styles from './ProjectModal.module.scss'
 
 interface ProjectModalInterface {
     defaultTag: string
+    updateLocation: (url: string) => void
     item: Item
     setItem: React.Dispatch<React.SetStateAction<Item | null>>
 }
@@ -17,8 +18,14 @@ const ProjectModal: FC<ProjectModalInterface> = ({
     defaultTag,
     item,
     setItem,
+    updateLocation,
 }) => {
-    const handleCancel = () => setItem(null)
+    const handleCancel = useCallback(() => setItem(null), [])
+
+    const handleUpdateUrl = useCallback(() => {
+        updateLocation(item.url)
+        handleCancel()
+    }, [handleCancel])
 
     return (
         <Modal
@@ -50,7 +57,7 @@ const ProjectModal: FC<ProjectModalInterface> = ({
                     </i>
                     <p id="modal-modal-description">{item.description}</p>
                 </section>
-                <Button title="Open project" onClick={() => {}} />
+                <Button title="Open project" onClick={handleUpdateUrl} />
             </div>
         </Modal>
     )

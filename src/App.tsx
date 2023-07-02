@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Header from '@components/Header'
-import Sidebar from '@components/Sidebar'
-import Banner from '@components/Banner'
-import ProjectList from '@components/ProjectList'
+import Home from '@pages/Home'
+import Project from '@pages/Project'
 import ProjectModal from '@components/ProjectModal'
 
 import { ItemContext } from '@context/itemContext'
@@ -22,6 +21,13 @@ const removeLoader = () => {
 const App = () => {
     const [activeItem, setActiveItem] = useState<Item | null>(null)
     const [activeTab, setActiveTab] = useState(DEFAULT_TAB)
+    const [location, setLocation] = useState(window.location.pathname)
+    const isHomePage = location === '/'
+
+    const updateLocation = (url: string) => {
+        setLocation(url)
+        history.replaceState({}, '', url)
+    }
 
     useEffect(() => {
         removeLoader()
@@ -35,19 +41,17 @@ const App = () => {
                 value={{ item: activeItem, setItem: setActiveItem }}
             >
                 <div className="App">
-                    <Header />
-                    <section className="main-section">
-                        <div className="side-wrapper">
-                            <Sidebar />
-                            <Banner />
-                        </div>
-                        <ProjectList />
-                    </section>
+                    <Header
+                        isHomePage={isHomePage}
+                        updateLocation={updateLocation}
+                    />
+                    {isHomePage ? <Home /> : <Project />}
                     {activeItem && (
                         <ProjectModal
                             item={activeItem}
                             setItem={setActiveItem}
                             defaultTag={DEFAULT_TAB}
+                            updateLocation={updateLocation}
                         />
                     )}
                 </div>

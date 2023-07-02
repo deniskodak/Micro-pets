@@ -1,13 +1,19 @@
 import React from 'react'
+import Sidebar from '@components/Sidebar'
+import Banner from '@components/Banner'
+import ProjectList from '@components/ProjectList'
+
+import styles from './Home.module.scss'
 
 const Home = () => {
     return (
-        <div>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo,
-            nihil? Voluptatum asperiores optio dolorum dicta omnis temporibus
-            totam aut enim, quo quam, soluta culpa illo eum, aliquam ipsam?
-            Consequatur, iure.
-        </div>
+        <section className={styles.mainSection}>
+            <div className={styles.sideWrapper}>
+                <Sidebar />
+                <Banner />
+            </div>
+            <ProjectList />
+        </section>
     )
 }
 

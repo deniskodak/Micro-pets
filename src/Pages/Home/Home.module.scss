@@ -1,0 +1,29 @@
+@import '../../styles/mixin.scss';
+
+.mainSection {
+    padding: var(--space-xxl) var(--space-l);
+
+    @include media($from: 'xl') {
+        display: flex;
+    }
+}
+
+.sideWrapper {
+    @include media($from: 'md', $until: 'xl') {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        margin-bottom: 6rem;
+    }
+
+    @include media($until: 'md') {
+        margin-bottom: var(--space-xxl);
+    }
+
+    @include media($from: 'xl') {
+        margin-right: var(--space-xxl);
+        min-width: var(--sidebar-width);
+        max-width: var(--sidebar-width);
+    }
+}

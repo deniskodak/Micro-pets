@@ -13,6 +13,11 @@
     --space-xxl: 40px;
     /* logo */
     --logo-text-size: 20px;
+    /* header */
+    --header-button-bg: #eac645;
+    --header-button-border: #eac645;
+    --header-button-text: #111;
+    --header-button-text-hover: #fff;
     /* sidebar */
     --sidebar-width: 335px;
     --sidebar-text-size: 18px;

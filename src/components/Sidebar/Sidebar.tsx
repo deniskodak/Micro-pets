@@ -20,32 +20,12 @@ const Sidebar = () => {
         TabContext
     ) as TabContextInterface
 
-    // const handleUpdateUrl = useCallback(
-    //     (item: Item) => () => {
-    //         history.replaceState({}, '', item.url)
-    //         setItem(item)
-    //     },
-    //     []
-    // )
-
     const handleChangeTap = useCallback(
         (e: React.SyntheticEvent<Element, Event>, value: string) => {
             setActiveTab(value)
         },
         []
     )
-
-    // const items = pagesConfig.map((item) => (
-    //     <li
-    //         key={item.url}
-    //         className={cl(styles.item, {
-    //             [styles.active]: activeItem.url === item.url,
-    //         })}
-    //         onClick={handleUpdateUrl(item)}
-    //     >
-    //         {item.title}
-    //     </li>
-    // ))
 
     return (
         <div>

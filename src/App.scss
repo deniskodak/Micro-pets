@@ -11,19 +11,6 @@ body {
     background-color: var(--body-background);
 }
 
-.main-section {
-    padding: var(--space-xxl) var(--space-l);
-
-    @include media($from: 'xl') {
-        display: flex;
-    }
-}
-
-.project-section {
-    flex: 1;
-    margin-left: var(--space-xxl);
-}
-
 ul {
     padding: 0;
     margin: 0;
@@ -32,24 +19,4 @@ ul {
 
 h1,h3,h2,h4,p {
     margin: 0;
-}
-
-.side-wrapper {
-    @include media($from: 'md', $until: 'xl') {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-
-        margin-bottom: 6rem;
-    }
-
-    @include media($until: 'md') {
-        margin-bottom: var(--space-xxl);
-    }
-
-    @include media($from: 'xl') {
-        margin-right: var(--space-xxl);
-        min-width: var(--sidebar-width);
-        max-width: var(--sidebar-width);
-    }
 }

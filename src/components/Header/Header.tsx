@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { FC, useCallback } from 'react'
 import Switch from '@mui/material/Switch'
+import Button from '@components/Button'
 import Logo from '@components/Logo'
 import { styled } from '@mui/material/styles'
 
@@ -22,9 +23,18 @@ const MaterialUISwitch = styled(Switch)(() => ({
 }))
 
 type Theme = keyof typeof themesMap
+interface HeaderInterface {
+    isHomePage: boolean
+    updateLocation: (url: string) => void
+}
 
-const Header = () => {
+const Header: FC<HeaderInterface> = ({ isHomePage, updateLocation }) => {
     const themeLink = document.querySelector('link[href*="-theme.css"]')
+
+    const handleHomeClick = useCallback(
+        () => updateLocation('/'),
+        [updateLocation]
+    )
 
     const handleChangeTheme = () => {
         if (!themeLink) return
@@ -38,7 +48,8 @@ const Header = () => {
     return (
         <header className={styles.header}>
             <Logo />
-            <MaterialUISwitch onChange={handleChangeTheme} />
+            {!isHomePage && <Button title="home" onClick={handleHomeClick} />}
+            <MaterialUISwitch onChange={handleChangeTheme} className={styles.switch} />
         </header>
     )
 }
