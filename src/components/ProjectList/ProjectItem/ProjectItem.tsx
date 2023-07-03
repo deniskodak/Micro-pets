@@ -17,10 +17,10 @@ const ProjectItem: FC<ProjectItem> = ({ pageConfig, defaultTab }) => {
     const { key, title, tags } = pageConfig
     const { setItem } = useContext(ItemContext) as ItemContextInterface
 
-    const handleItemClick = () => setItem(pageConfig)
+    const handleImageClick = () => setItem(pageConfig)
 
     return (
-        <li className={styles.item} onClick={handleItemClick}>
+        <li className={styles.item}>
             <figure className={styles.figure}>
                 <picture>
                     <source
@@ -36,6 +36,7 @@ const ProjectItem: FC<ProjectItem> = ({ pageConfig, defaultTab }) => {
                         media="(min-width: 1199px)"
                     />
                     <img
+                        onClick={handleImageClick}
                         src={imagesUrls[(key + 'Sm') as ImageUrl]}
                         alt={title + 'project'}
                     />
