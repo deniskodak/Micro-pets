@@ -1,7 +1,18 @@
+@import '../../../styles/mixin.scss';
+
 .TicTacToeWrapper {
     position: relative;
-    max-width: 1200px;
+
     & section {
         height: 510px;
+        border-radius: 0.5rem;
+        
+        @include media($from: 'sm', $until: 'xl') {
+            height: 660px;
+        }
+    }
+
+    [class*='react-responsive-modal-container'] {
+        overflow: hidden;
     }
 }
